@@ -25,7 +25,6 @@ const savePersonToFile = async (name) => {
     }
 }
 async function getWikipediaImageFromName(name) {
-    console.log("🚀 ~ file: utils.js ~ line 6 ~ getWikipediaImageFromName ~ name", name)
     const wikiRes = await axios.get(
         `https://en.wikipedia.org/w/api.php?action=query&titles=${name}&prop=pageimages&format=json&pithumbsize=500`
     );
@@ -43,7 +42,6 @@ function extractWikipediaThumbnailFromWikiResponse(wikiRes) {
 }
 // Returns a promise
 const saveImageStreamIntoFile = async (imageStream, filePath) => {
-    console.log("🚀 ~ file: utils.js ~ line 47 ~ saveImageStreamIntoFile ~ filePath", filePath)
     return new Promise((resolve, reject) => {
         const w = imageStream.pipe(fs.createWriteStream(filePath));
         w.on('error', error => reject(error))

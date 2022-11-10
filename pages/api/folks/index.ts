@@ -15,7 +15,6 @@ export default async function handler(
   res: NextApiResponse<{ success: Boolean; data: Data[]; error?: Error }>
 ) {
   const { method } = req;
-  console.log(method);
   await dbConnect();
   switch (method) {
     case "GET":
@@ -32,7 +31,6 @@ export default async function handler(
     case "POST":
       try {
         const { name: nameFromReq } = req.body;
-        console.log(req.body);
 
         const name = transformString(nameFromReq);
 
@@ -56,7 +54,6 @@ export default async function handler(
           data: person,
         });
       } catch (error) {
-        console.log("🚀 ~ file: index.ts ~ line 55 ~ error", error);
         return res.status(400).json({ success: false, data: [] });
       }
       break;

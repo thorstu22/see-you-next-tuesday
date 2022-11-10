@@ -17,7 +17,6 @@ export function AppWrapper({ children }) {
 
     let sharedState = { battle, folks, refetchFolks, refetchBattle }
 
-    console.log("🚀 ~ file: state.js ~ line 8 ~ AppWrapper ~ sharedState", sharedState)
     return (
         <AppContext.Provider value={sharedState}>
             {children}

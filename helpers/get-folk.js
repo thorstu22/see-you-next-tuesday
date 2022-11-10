@@ -15,9 +15,7 @@ async function doIt() {
         const {data: people} = await axios({
          method: 'GET',
          url: `https://api.api-ninjas.com/v1/celebrity?min_net_worth=${bracket}`,
-     })
-        console.log("🚀 ~ file: get-folk.js ~ line 19 ~ people", people)
-     
+     })     
          for (const folk of people) {
              //Transform the name ()/captilize the name
              const forenameAndSurnameAsAnArray = folk.name.split(" ")

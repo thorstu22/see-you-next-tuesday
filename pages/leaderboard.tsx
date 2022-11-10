@@ -2,12 +2,13 @@ import Layout from "../components/layout";
 import { useAppContext } from "../context/state";
 export default function Leaderboard() {
   // get all folks
-
+  interface Person {
+    _id: number;
+    name: string;
+    image: string;
+    votes: number;
+  }
   const { folks } = useAppContext();
-  console.log(
-    "🚀 ~ file: leaderboard.tsx ~ line 10 ~ Leaderboard ~ folks ",
-    folks
-  );
 
   return (
     <Layout>
@@ -32,13 +33,8 @@ export default function Leaderboard() {
         </tfoot>
         <tbody>
           {folks &&
-            folks.data.map((person) => {
-              {
-                console.log(
-                  "🚀 ~ file: leaderboard.tsx ~ line 37 ~ {data.data.map ~ person",
-                  person
-                );
-              }
+            folks.data.map((person: Person) => {
+          
               return (
                 <tr key={`${person._id}`}>
                   <td key={`${person._id}`}>{person._id}</td>

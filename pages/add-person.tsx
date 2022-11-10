@@ -9,7 +9,7 @@ export default function AddPerson() {
   const [success, setSuccess] = useState(false);
   const [err, setErr] = useState("");
 
-  const handleInput = (event) => {
+  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
   };
 
@@ -27,7 +27,6 @@ export default function AddPerson() {
     if (updatedPerson.status === 201) {
       setSuccess(true);
     }
-    console.log(updatedPerson.data);
     if (updatedPerson.status === 200) {
       if (updatedPerson.data.data.length >= 1) {
         setErr("person already exists");
@@ -70,7 +69,7 @@ export default function AddPerson() {
         </div>
       </div>
       {success ? (
-        <p className="has-text-white">Got someone successfully, check them out -> {}</p>
+        <p className="has-text-white">Got someone successfully</p>
       ) : null}
       {err.length > 0 ? <p className="has-text-white">{err}</p> : null}
     </Layout>

@@ -22,8 +22,6 @@ export default function Home() {
     );
 
   const vote = (person: Person) => {
-    console.log("TRIGGERD A VOTE");
-
     executePut({
       data: { _id: person._id },
     });
@@ -60,11 +58,6 @@ export default function Home() {
                     <Image
                       onClick={(e) => {
                         e.persist();
-
-                        console.log(
-                          "🚀 ~ file: index.tsx ~ line 64 ~ Home ~ e",
-                          e
-                        );
                         vote(battle[0]);
                       }}
                       alt={battle[0].name}
@@ -82,12 +75,7 @@ export default function Home() {
                     <>
                       <Image
                         onClick={(e) => {
-                          console.log(
-                            "🚀 ~ file: index.tsx ~ line 82 ~ Home ~ e",
-                            e
-                          );
                           e.persist();
-
                           vote(battle[1]);
                         }}
                         alt={battle[1].name}

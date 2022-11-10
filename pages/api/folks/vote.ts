@@ -18,10 +18,5 @@ export default async function handler(
   const savedPerson = await Folk.findByIdAndUpdate(person._id, {
     votes: person.votes + 1,
   });
-
-  console.log(
-    "🚀 ~ file: folks.js ~ line 59 ~ router.put ~ savedPerson",
-    savedPerson
-  );
   return res.status(200).json(savedPerson);
 }
