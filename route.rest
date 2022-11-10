@@ -1,0 +1,34 @@
+GET http://localhost:3000/api/folks
+
+###
+GET http://localhost:3000/api/folks/6368e4ed166e6d46f3294602
+
+###
+DELETE http://localhost:3000/api/folks/6368e4ed166e6d46f3294602
+
+###
+
+POST http://localhost:3000/api/folks
+content-type: application/json
+
+{
+    "name" : "Liz+Truss"
+}
+
+### 
+POST http://localhost:3000/api/folks/vote
+content-type: application/json
+
+{
+    "_id" : "6368e4ed166e6d46f3294602"
+}
+
+###
+GET http://localhost:3000/api/folks/4755555553543
+content-type: application/json
+
+{
+    "name" : "Kevin+Bacon"
+}
+###
+# p92LdhgBG1aqPTT37N61QA==hjcmYSYzCzvIv2t2
